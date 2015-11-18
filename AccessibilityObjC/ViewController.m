@@ -22,7 +22,9 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    NSArray *numberOfCells;
+}
 
 - (instancetype)init
 {
@@ -72,15 +74,29 @@
     
     switch (_selectedCell) {
         case CellOne:
-            tableView = [tableView count];
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellOne"];
+            break;
+            
+        case CellTwo:
+            
             break;
             
         default:
             break;
     }
     
-    return 1;
+    return [numberOfCells count];
 }
+
+
+
+ - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellOne" forIndexPath:indexPath];
+ 
+ // Configure the cell...
+ 
+ return cell;
+ }
 
 // MARK: SWift to Objective C method
 
