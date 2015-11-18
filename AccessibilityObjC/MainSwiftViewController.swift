@@ -81,12 +81,14 @@ import UIKit
             
         case .CellOne:
             let cellName = "cellOne"
-            requestedObjects = tableView.dequeueReusableCellWithIdentifier(cellName)!
+            requestedObjects = tableView.dequeueReusableCellWithIdentifier(cellName) as UITableViewCell!
         case .CellTwo:
             let cellName = "CellTwo"
-            requestedObjects = tableView.dequeueReusableCellWithIdentifier(cellName)!
+            requestedObjects = tableView.dequeueReusableCellWithIdentifier(cellName) as UITableViewCell!
             
         }
+
+        
         
         return requestedObjects.count
     }
@@ -108,6 +110,7 @@ import UIKit
         }
         
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(cellName) as UITableViewCell!
+        
         return cell
     }
     
@@ -123,7 +126,6 @@ import UIKit
             
         case .CellTwo:
             UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, firstTable)
-            
         }
     }
     

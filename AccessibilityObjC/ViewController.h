@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-typedef enum { CellOne, CellTwo } SelectedCell;
+typedef enum { CellOne = 0, CellTwo } SelectedCell;
 
 -(UITableView *)checkWhichTableView: (UITableView *)tableView;
 

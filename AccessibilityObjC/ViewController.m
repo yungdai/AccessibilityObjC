@@ -14,22 +14,22 @@
 
 @property (weak, nonatomic) IBOutlet FirstTable *firstTable;
 @property (weak, nonatomic) IBOutlet SecondTable *secondTable;
-@property (weak, nonatomic) UITableView *requestdObjects;
-@property (nonatomic) SelectedCell *selectedCell;
-
-
-
+@property (weak, nonatomic) UITableViewCell *requestdObjects;
+@property (nonatomic) SelectedCell selectedCell;
 
 @end
 
 @implementation ViewController {
-    NSArray *numberOfCells;
+    NSString *cellName;
+    NSArray *tableData1;
+    NSArray *tableData2;
 }
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
+
     }
     return self;
 }
@@ -38,7 +38,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    tableData1 = [NSArray  arrayWithObjects:@"Row 1", @"Row 2", @"Row 3",nil];
     
+    tableData2 = [NSArray  arrayWithObjects:@"Row 1", @"Row 2", @"Row 3",nil];
 }
 
 #pragma mark - Table view data source
@@ -48,54 +50,72 @@
     return 1;
 }
 
-// must convert the following to ObjC
-//func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//    
-//    checkWhichTableView(tableView)
-//    
-//    switch selectedCell {
-//        
-//    case .CellOne:
-//        let cellName = "cellOne"
-//        requestedObjects = tableView.dequeueReusableCellWithIdentifier(cellName)!
-//    case .CellTwo:
-//        let cellName = "CellTwo"
-//        requestedObjects = tableView.dequeueReusableCellWithIdentifier(cellName)!
-//        
-//    }
-//    
-//    return requestedObjects.count
-//}
-
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     [self checkWhichTableView:tableView];
     
-    switch (_selectedCell) {
+    switch (self.selectedCell) {
         case CellOne:
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellOne"];
+            section = [tableData1 count];
             break;
             
         case CellTwo:
-            
+            section = [tableData2 count];
             break;
             
         default:
             break;
     }
     
-    return [numberOfCells count];
+
+    return section;
 }
 
-
+// convert from Swift to Objc
+//func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//    
+//    var cellName: String!
+//    
+//    checkWhichTableView(tableView)
+//    
+//    switch selectedCell {
+//        
+//    case .CellOne:
+//        cellName = "cellOne"
+//        
+//    case .CellTwo:
+//        cellName = "cellTwo"
+//        
+//    }
+//    
+//    let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(cellName) as UITableViewCell!
+//    return cell
+//}
 
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellOne" forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
+
+     [self checkWhichTableView:tableView];
+     
+         switch (self.selectedCell) {
+             case CellOne:
+                 self.requestdObjects = [tableView dequeueReusableCellWithIdentifier:cellName];
+                 break;
+     
+             case CellTwo:
+                 self.requestdObjects = [tableView dequeueReusableCellWithIdentifier:cellName];
+                 break;
+     
+             default:
+                 break;
+         }
+     
+      UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName forIndexPath:indexPath];
+     
+     if (cell == nil) {
+         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:cellName];
+     }
+     
+     cell.textLabel.text = [tableData1 objectAtIndex:indexPath.row];
+     return cell;
  }
 
 // MARK: SWift to Objective C method
@@ -117,10 +137,13 @@
 
 -(UITableView *)checkWhichTableView: (UITableView *)tableView {
     
-    if (tableView == _firstTable) {
-        _selectedCell = CellOne;
-    } else if (tableView == _secondTable){
-        _selectedCell = CellTwo;
+    if (tableView == self.firstTable) {
+        cellName = @"cellOne";
+        self.selectedCell = CellOne;
+    }
+    else if (tableView == self.secondTable){
+        cellName = @"cellTwo";
+        self.selectedCell = CellTwo;
     }
     return tableView;
 }
