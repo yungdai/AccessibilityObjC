@@ -1,16 +1,13 @@
 //
-//  ViewController.h
+//  SwiftObject.swift
 //  AccessibilityObjC
 //
 //  Created by Yung Dai on 2015-11-17.
 //  Copyright © 2015 Yung Dai. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+import UIKit
 
-@interface ViewController : UIViewController
+@objc class SwiftObject: NSObject {
 
-
-
-@end
-
+}

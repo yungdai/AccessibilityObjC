@@ -16,6 +16,11 @@
 		1A726DC01BFC1BAD0017A05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A726DBE1BFC1BAD0017A05A /* LaunchScreen.storyboard */; };
 		1A726DCB1BFC1BAD0017A05A /* AccessibilityObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DCA1BFC1BAD0017A05A /* AccessibilityObjCTests.m */; };
 		1A726DD61BFC1BAD0017A05A /* AccessibilityObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DD51BFC1BAD0017A05A /* AccessibilityObjCUITests.m */; };
+		1A726DE51BFC1BF10017A05A /* SwiftObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DE41BFC1BF10017A05A /* SwiftObject.swift */; };
+		1A726DEA1BFC1C610017A05A /* FirstTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DE61BFC1C610017A05A /* FirstTable.swift */; };
+		1A726DEB1BFC1C610017A05A /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DE71BFC1C610017A05A /* FirstTableViewCell.swift */; };
+		1A726DEC1BFC1C610017A05A /* SecondTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DE81BFC1C610017A05A /* SecondTable.swift */; };
+		1A726DED1BFC1C610017A05A /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DE91BFC1C610017A05A /* SecondTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,12 @@
 		1A726DD11BFC1BAD0017A05A /* AccessibilityObjCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibilityObjCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A726DD51BFC1BAD0017A05A /* AccessibilityObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessibilityObjCUITests.m; sourceTree = "<group>"; };
 		1A726DD71BFC1BAD0017A05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A726DE31BFC1BF10017A05A /* AccessibilityObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AccessibilityObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		1A726DE41BFC1BF10017A05A /* SwiftObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftObject.swift; sourceTree = "<group>"; };
+		1A726DE61BFC1C610017A05A /* FirstTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTable.swift; sourceTree = "<group>"; };
+		1A726DE71BFC1C610017A05A /* FirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		1A726DE81BFC1C610017A05A /* SecondTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTable.swift; sourceTree = "<group>"; };
+		1A726DE91BFC1C610017A05A /* SecondTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +94,12 @@
 		1A726DA11BFC1BAD0017A05A = {
 			isa = PBXGroup;
 			children = (
+				1A726DE41BFC1BF10017A05A /* SwiftObject.swift */,
 				1A726DAC1BFC1BAD0017A05A /* AccessibilityObjC */,
 				1A726DC91BFC1BAD0017A05A /* AccessibilityObjCTests */,
 				1A726DD41BFC1BAD0017A05A /* AccessibilityObjCUITests */,
 				1A726DAB1BFC1BAD0017A05A /* Products */,
+				1A726DE31BFC1BF10017A05A /* AccessibilityObjC-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +116,10 @@
 		1A726DAC1BFC1BAD0017A05A /* AccessibilityObjC */ = {
 			isa = PBXGroup;
 			children = (
+				1A726DE61BFC1C610017A05A /* FirstTable.swift */,
+				1A726DE71BFC1C610017A05A /* FirstTableViewCell.swift */,
+				1A726DE81BFC1C610017A05A /* SecondTable.swift */,
+				1A726DE91BFC1C610017A05A /* SecondTableViewCell.swift */,
 				1A726DB01BFC1BAD0017A05A /* AppDelegate.h */,
 				1A726DB11BFC1BAD0017A05A /* AppDelegate.m */,
 				1A726DB31BFC1BAD0017A05A /* ViewController.h */,
@@ -273,10 +290,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A726DEC1BFC1C610017A05A /* SecondTable.swift in Sources */,
 				1A726DBB1BFC1BAD0017A05A /* AccessibilityObjC.xcdatamodeld in Sources */,
+				1A726DEA1BFC1C610017A05A /* FirstTable.swift in Sources */,
 				1A726DB51BFC1BAD0017A05A /* ViewController.m in Sources */,
 				1A726DB21BFC1BAD0017A05A /* AppDelegate.m in Sources */,
+				1A726DED1BFC1C610017A05A /* SecondTableViewCell.swift in Sources */,
 				1A726DAF1BFC1BAD0017A05A /* main.m in Sources */,
+				1A726DE51BFC1BF10017A05A /* SwiftObject.swift in Sources */,
+				1A726DEB1BFC1C610017A05A /* FirstTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,10 +439,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = AccessibilityObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.AccessibilityObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AccessibilityObjC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -428,10 +454,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = AccessibilityObjC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.AccessibilityObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AccessibilityObjC-Bridging-Header.h";
 			};
 			name = Release;
 		};

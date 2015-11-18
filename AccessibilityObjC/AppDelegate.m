@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AccessibilityObjC-Swift.h"
 
 @interface AppDelegate ()
 

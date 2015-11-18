@@ -7,8 +7,22 @@
 //
 
 #import "ViewController.h"
+#import "AccessibilityObjC-Swift.h"
 
 @interface ViewController ()
+
+// declare the tables
+@property (weak, nonatomic) IBOutlet FirstTable *firstTable;
+@property (weak, nonatomic) IBOutlet SecondTable *secondTable;
+
+
+
+@property (nonatomic, readwrite, copy) UITableView *requestdObjects;
+
+
+
+
+
 
 @end
 
@@ -17,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
