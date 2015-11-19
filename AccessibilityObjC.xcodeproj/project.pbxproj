@@ -127,8 +127,8 @@
 		1A726DAC1BFC1BAD0017A05A /* AccessibilityObjC */ = {
 			isa = PBXGroup;
 			children = (
-				9F71CAEC1BFCBC5000DBC370 /* Models */,
 				9F71CAEB1BFCBC4600DBC370 /* ViewControllers */,
+				9F71CAEC1BFCBC5000DBC370 /* Models */,
 				1A726DB61BFC1BAD0017A05A /* Main.storyboard */,
 				1A726DBC1BFC1BAD0017A05A /* Assets.xcassets */,
 				1A726DBE1BFC1BAD0017A05A /* LaunchScreen.storyboard */,

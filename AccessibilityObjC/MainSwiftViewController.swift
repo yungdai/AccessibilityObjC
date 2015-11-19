@@ -13,6 +13,8 @@ import UIKit
     
     @IBOutlet weak var firstTable: FirstTable!
     @IBOutlet weak var secondTable: SecondTable!
+    let tableData1 = ["Row 1", "Row 2", "Row 3"]
+    let tableData2 = ["From Row 1", "From Row 2", "From Row 3"]
     
     var requestedObjects: AnyObject = []
     
@@ -80,17 +82,14 @@ import UIKit
         switch selectedCell {
             
         case .CellOne:
-            let cellName = "cellOne"
-            requestedObjects = tableView.dequeueReusableCellWithIdentifier(cellName) as UITableViewCell!
+            section == tableData1.count
+
+
         case .CellTwo:
-            let cellName = "CellTwo"
-            requestedObjects = tableView.dequeueReusableCellWithIdentifier(cellName) as UITableViewCell!
-            
+            section == tableData2.count
         }
 
-        
-        
-        return requestedObjects.count
+        return section
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
