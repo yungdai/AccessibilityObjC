@@ -118,14 +118,14 @@ import UIKit
         // check to see which tableView is selected
         checkWhichTableView(tableView)
         
-        switch selectedCell {
-            
-        case .CellOne:
-            UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, secondTable)
-            
-        case .CellTwo:
-            UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, firstTable)
-        }
+//        switch selectedCell {
+//            
+//        case .CellOne:
+//            UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, secondTable)
+//            
+//        case .CellTwo:
+//            UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, firstTable)
+//        }
     }
     
     // check to see which table is selected

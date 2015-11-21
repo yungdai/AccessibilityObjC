@@ -23,6 +23,7 @@
                                 <rect key="frame" x="20" y="60" width="180" height="480"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellOne" id="OBD-lt-G9I" customClass="FirstTableViewCell" customModule="AccessibilityObjC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="180" height="44"/>
@@ -34,7 +35,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="xb6-mB-bqE">
                                                     <rect key="frame" x="0.0" y="22" width="180" height="0.0"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -48,7 +49,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="touchHereFirstLabel" destination="xb6-mB-bqE" id="aCL-zb-Z75"/>
+                                            <outlet property="firstTableViewCellLabel" destination="xb6-mB-bqE" id="HyY-Co-2hb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -58,47 +59,8 @@
                                     <outlet property="delegate" destination="iKO-kW-Cxu" id="79u-8O-bWx"/>
                                 </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cE2-he-HrJ" customClass="SecondTable" customModule="AccessibilityObjC" customModuleProvider="target">
-                                <rect key="frame" x="214" y="60" width="180" height="480"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTwo" id="sz7-76-Lfn" customClass="SecondTableViewCell" customModule="AccessibilityObjC" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="180" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sz7-76-Lfn" id="gVS-AT-VUL">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-WO-39T">
-                                                    <rect key="frame" x="0.0" y="22" width="180" height="0.0"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstItem="jZr-WO-39T" firstAttribute="centerY" secondItem="gVS-AT-VUL" secondAttribute="centerY" id="Bya-Oi-eRw"/>
-                                                <constraint firstItem="jZr-WO-39T" firstAttribute="centerX" secondItem="gVS-AT-VUL" secondAttribute="centerX" id="GtI-uS-MmU"/>
-                                                <constraint firstItem="jZr-WO-39T" firstAttribute="width" secondItem="gVS-AT-VUL" secondAttribute="width" id="z51-fk-ss5"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <outlet property="focusedCell" destination="jZr-WO-39T" id="q5N-r3-usN"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="iKO-kW-Cxu" id="w5U-T0-TWD"/>
-                                    <outlet property="delegate" destination="iKO-kW-Cxu" id="cOQ-wI-rSZ"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Y3-I0-hWr" customClass="ButtonStyle" customModule="AccessibilityObjC" customModuleProvider="target">
-                                <rect key="frame" x="404" y="287" width="138" height="26"/>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Y3-I0-hWr" customClass="ButtonStyle" customModule="AccessibilityObjC" customModuleProvider="target">
+                                <rect key="frame" x="404" y="288" width="138" height="24"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -118,6 +80,45 @@
                                     <segue destination="yER-RU-3I8" kind="presentation" id="i6r-Ec-hB7"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cE2-he-HrJ" customClass="SecondTable" customModule="AccessibilityObjC" customModuleProvider="target">
+                                <rect key="frame" x="216" y="60" width="180" height="480"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTwo" id="sz7-76-Lfn" customClass="SecondTableViewCell" customModule="AccessibilityObjC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="180" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sz7-76-Lfn" id="gVS-AT-VUL">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-WO-39T">
+                                                    <rect key="frame" x="0.0" y="22" width="180" height="0.0"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="jZr-WO-39T" firstAttribute="centerY" secondItem="gVS-AT-VUL" secondAttribute="centerY" id="Bya-Oi-eRw"/>
+                                                <constraint firstItem="jZr-WO-39T" firstAttribute="centerX" secondItem="gVS-AT-VUL" secondAttribute="centerX" id="GtI-uS-MmU"/>
+                                                <constraint firstItem="jZr-WO-39T" firstAttribute="width" secondItem="gVS-AT-VUL" secondAttribute="width" id="z51-fk-ss5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="secondTableViewCellLabel" destination="jZr-WO-39T" id="V87-Ad-zxT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iKO-kW-Cxu" id="w5U-T0-TWD"/>
+                                    <outlet property="delegate" destination="iKO-kW-Cxu" id="cOQ-wI-rSZ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -153,7 +154,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="firstTable" destination="5PG-w0-Bbr" id="mSh-cT-C6C"/>
+                        <outlet property="firstTable" destination="5PG-w0-Bbr" id="X97-D3-nJi"/>
                         <outlet property="secondTable" destination="cE2-he-HrJ" id="fme-OO-bCT"/>
                     </connections>
                 </viewController>
@@ -185,8 +186,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Touch Here First" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-f0-pfC">
-                                                    <rect key="frame" x="0.0" y="12" width="180" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch Here First" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-f0-pfC">
+                                                    <rect key="frame" x="0.0" y="11" width="180" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -201,9 +202,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <outlet property="touchHereFirstLabel" destination="PHZ-f0-pfC" id="P7J-c2-CoI"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -240,9 +238,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <outlet property="focusedCell" destination="u1W-Vs-srq" id="MjD-k9-ucG"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>

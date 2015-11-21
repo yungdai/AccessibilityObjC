@@ -10,16 +10,17 @@ import UIKit
 
 @objc class FirstTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var touchHereFirstLabel: UILabel!
+    @IBOutlet weak var firstTableViewCellLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         // create the labels
-        touchHereFirstLabel.accessibilityLabel = "\(touchHereFirstLabel.text)"
+        firstTableViewCellLabel.accessibilityLabel = "\(firstTableViewCellLabel.text)"
         
         // create the hint for the cell labels
-        touchHereFirstLabel.accessibilityHint = "\(touchHereFirstLabel.text) hint"
+        firstTableViewCellLabel.accessibilityHint = "\(firstTableViewCellLabel.text) hint"
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

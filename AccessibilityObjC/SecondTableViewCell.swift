@@ -10,17 +10,18 @@ import UIKit
 
 @objc class SecondTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var focusedCell: UILabel!
+
+    @IBOutlet weak var secondTableViewCellLabel: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         // create the labels
-        focusedCell.accessibilityLabel = "\(focusedCell.text)"
+        secondTableViewCellLabel.accessibilityLabel = "\(secondTableViewCellLabel.text) label"
         
         // create the hint for the cell labels
-        focusedCell.accessibilityHint = "\(focusedCell.text) hint"
+        secondTableViewCellLabel.accessibilityHint = "\(secondTableViewCellLabel.text) hint"
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

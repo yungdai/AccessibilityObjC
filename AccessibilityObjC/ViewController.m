@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet FirstTable *firstTable;
 @property (weak, nonatomic) IBOutlet SecondTable *secondTable;
+@property (strong, nonatomic) FirstTableViewCell *firstTableViewCell;
+@property (strong, nonatomic) SecondTableViewCell *secondTableViewCell;
 @property (weak, nonatomic) UITableViewCell *cell;
 @property (nonatomic) SelectedTable selectedTable;
 
@@ -69,45 +71,39 @@
 
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-     [self checkWhichTableView:tableView];
+ 
      
+     [self checkWhichTableView:tableView];
          switch (self.selectedTable) {
              case TableOne:
-                 self.cell = [tableView dequeueReusableCellWithIdentifier:cellName forIndexPath:indexPath];
+                 self.firstTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"cellOne" forIndexPath:indexPath];
+                 NSInteger *index = [indexPath]
+                 NSString *otherColumn = [tableData2 objectAtIndex: indexPath];
+                 self.firstTableViewCell.firstTableViewCellLabel.text = [tableData1 objectAtIndex:indexPath.row];
+                 self.firstTableViewCell.firstTableViewCellLabel.accessibilityLabel = [NSString stringWithFormat:@"%@ and something from %@", self.firstTableViewCell.firstTableViewCellLabel.text, otherColumn];
+                 NSLog(@"%@ and something from %@", self.firstTableViewCell.firstTableViewCellLabel.text, otherColumn);
+                 return self.firstTableViewCell;
                  
-                 if (self.cell == nil) {
-                     self.cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:cellName];
-                 }
-                 
-                 self.cell.textLabel.text = [tableData1 objectAtIndex:indexPath.row];
-     
              case TableTwo:
-                 self.cell = [tableView dequeueReusableCellWithIdentifier:cellName forIndexPath:indexPath];
-                 
-                 if (self.cell == nil) {
-                     self.cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:cellName];
-                 }
-                 
-                 self.cell.textLabel.text = [tableData2 objectAtIndex:indexPath.row];
+                 self.firstTableViewCell = [self.firstTable dequeueReusableCellWithIdentifier:@"cellOne" forIndexPath:indexPath];
+                 self.secondTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"cellTwo" forIndexPath:indexPath];
+                 self.secondTableViewCell.secondTableViewCellLabel.text = [tableData2 objectAtIndex:indexPath.row];
+                 self.secondTableViewCell.secondTableViewCellLabel.accessibilityLabel = [NSString stringWithFormat:@"%@ and something from %@", self.secondTableViewCell.secondTableViewCellLabel.text, self.firstTableViewCell.firstTableViewCellLabel.text];
+                 NSLog(@"%@ and something from %@", self.secondTableViewCell.secondTableViewCellLabel.text, self.firstTableViewCell.firstTableViewCellLabel.text);
+                 return self.secondTableViewCell;
          }
      
-     return self.cell;
  }
 
 - (void)addAccessiblityElements {
     
     // create the lables for the two respective tables
-    _firstTable.accessibilityLabel = @"This is a custom Accounts Table";
-    _secondTable.accessibilityLabel = @"This is a custo Results Table";
-    
-    
-    
+    self.firstTable.accessibilityLabel = @"This is a custom accounts table";
+    self.secondTable.accessibilityLabel = @"This is a custom results table";
+
     // create the accessbility hint for the two tables
-    _firstTable.accessibilityHint = @"This table shows accounts";
-    _secondTable.accessibilityHint = @"This table shows Results";
-    
-    
-    
+    self.firstTable.accessibilityHint = @"This table shows accounts";
+    self.secondTable.accessibilityHint = @"This table shows results";
 }
 
 // ObjC
