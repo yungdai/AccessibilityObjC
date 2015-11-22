@@ -21,6 +21,7 @@
 		1A726DEB1BFC1C610017A05A /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DE71BFC1C610017A05A /* FirstTableViewCell.swift */; };
 		1A726DEC1BFC1C610017A05A /* SecondTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DE81BFC1C610017A05A /* SecondTable.swift */; };
 		1A726DED1BFC1C610017A05A /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A726DE91BFC1C610017A05A /* SecondTableViewCell.swift */; };
+		1A8D68DC1C00EDFB0021BC9A /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8D68DB1C00EDFB0021BC9A /* TestData.swift */; };
 		9F71CAF01BFCBC8D00DBC370 /* MainSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71CAEF1BFCBC8D00DBC370 /* MainSwiftViewController.swift */; };
 		9F71CAF31BFCBD7100DBC370 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71CAF21BFCBD7100DBC370 /* ButtonStyle.swift */; };
 		9F71CAF61BFCBD8100DBC370 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71CAF41BFCBD8100DBC370 /* BackgroundView.swift */; };
@@ -70,6 +71,7 @@
 		1A726DE71BFC1C610017A05A /* FirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		1A726DE81BFC1C610017A05A /* SecondTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTable.swift; sourceTree = "<group>"; };
 		1A726DE91BFC1C610017A05A /* SecondTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
+		1A8D68DB1C00EDFB0021BC9A /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		9F71CAEF1BFCBC8D00DBC370 /* MainSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSwiftViewController.swift; sourceTree = "<group>"; };
 		9F71CAF21BFCBD7100DBC370 /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		9F71CAF41BFCBD8100DBC370 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				1A726DE61BFC1C610017A05A /* FirstTable.swift */,
 				1A726DE81BFC1C610017A05A /* SecondTable.swift */,
 				1A726DE91BFC1C610017A05A /* SecondTableViewCell.swift */,
+				1A8D68DB1C00EDFB0021BC9A /* TestData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				1A726DEC1BFC1C610017A05A /* SecondTable.swift in Sources */,
 				1A726DBB1BFC1BAD0017A05A /* AccessibilityObjC.xcdatamodeld in Sources */,
 				1A726DEA1BFC1C610017A05A /* FirstTable.swift in Sources */,
+				1A8D68DC1C00EDFB0021BC9A /* TestData.swift in Sources */,
 				1A726DB51BFC1BAD0017A05A /* ViewController.m in Sources */,
 				1A726DB21BFC1BAD0017A05A /* AppDelegate.m in Sources */,
 				9F71CAFA1BFCC76500DBC370 /* TestTableViewController.m in Sources */,

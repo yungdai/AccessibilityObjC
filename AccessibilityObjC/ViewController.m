@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet SecondTable *secondTable;
 @property (strong, nonatomic) FirstTableViewCell *firstTableViewCell;
 @property (strong, nonatomic) SecondTableViewCell *secondTableViewCell;
+@property (weak, nonatomic) TestData *testData;
 @property (weak, nonatomic) UITableViewCell *cell;
 @property (nonatomic) SelectedTable selectedTable;
 
@@ -40,8 +41,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    tableData1 = [NSArray  arrayWithObjects:@"Row 1", @"Row 2", @"Row 3", nil];
-    tableData2 = [NSArray  arrayWithObjects:@"From Row 1", @"From Row 2", @"From Row 3", nil];
+    tableData1 = [NSArray  arrayWithObjects:@"Chequing", @"Savings", @"Credit Cards", nil];
+    tableData2 = [NSArray  arrayWithObjects:@"More Info about Chequing", @"More Information about Savings", @"More Information about Credit Cards", nil];
     [self addAccessiblityElements];
 }
 
@@ -70,28 +71,37 @@
 }
 
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+     
+     // declare the colum row data
+     NSInteger row = indexPath.row;
+//     NSString *columnOneData = [tableData1 objectAtIndex: row];
+//     NSString *columnTwoData = [tableData2 objectAtIndex: row];
+     
+     NSArray *testData = [[TestData alloc] init];
+     
 
- 
+     
+     
      
      [self checkWhichTableView:tableView];
-         switch (self.selectedTable) {
-             case TableOne:
-                 self.firstTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"cellOne" forIndexPath:indexPath];
-                 NSInteger *index = [indexPath]
-                 NSString *otherColumn = [tableData2 objectAtIndex: indexPath];
-                 self.firstTableViewCell.firstTableViewCellLabel.text = [tableData1 objectAtIndex:indexPath.row];
-                 self.firstTableViewCell.firstTableViewCellLabel.accessibilityLabel = [NSString stringWithFormat:@"%@ and something from %@", self.firstTableViewCell.firstTableViewCellLabel.text, otherColumn];
-                 NSLog(@"%@ and something from %@", self.firstTableViewCell.firstTableViewCellLabel.text, otherColumn);
-                 return self.firstTableViewCell;
-                 
-             case TableTwo:
-                 self.firstTableViewCell = [self.firstTable dequeueReusableCellWithIdentifier:@"cellOne" forIndexPath:indexPath];
-                 self.secondTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"cellTwo" forIndexPath:indexPath];
-                 self.secondTableViewCell.secondTableViewCellLabel.text = [tableData2 objectAtIndex:indexPath.row];
-                 self.secondTableViewCell.secondTableViewCellLabel.accessibilityLabel = [NSString stringWithFormat:@"%@ and something from %@", self.secondTableViewCell.secondTableViewCellLabel.text, self.firstTableViewCell.firstTableViewCellLabel.text];
-                 NSLog(@"%@ and something from %@", self.secondTableViewCell.secondTableViewCellLabel.text, self.firstTableViewCell.firstTableViewCellLabel.text);
-                 return self.secondTableViewCell;
-         }
+     switch (self.selectedTable) {
+             
+         case TableOne:
+             
+             self.firstTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"cellOne" forIndexPath:indexPath];
+             self.firstTableViewCell.firstTableViewCellLabel.text = [tableData1 objectAtIndex:indexPath.row];
+             self.firstTableViewCell.firstTableViewCellLabel.accessibilityLabel = [NSString stringWithFormat:@"%@ and something from %@", self.firstTableViewCell.firstTableViewCellLabel.text, columnTwoData];
+             NSLog(@"%@ and something from %@", self.firstTableViewCell.firstTableViewCellLabel.text, columnTwoData);
+             return self.firstTableViewCell;
+             
+         case TableTwo:
+             
+             self.secondTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"cellTwo" forIndexPath:indexPath];
+             self.secondTableViewCell.secondTableViewCellLabel.text = [tableData2 objectAtIndex:indexPath.row];
+             self.secondTableViewCell.secondTableViewCellLabel.accessibilityLabel = [NSString stringWithFormat:@"%@ and something from %@", self.secondTableViewCell.secondTableViewCellLabel.text, columnOneData];
+             NSLog(@"%@ and something from %@", self.secondTableViewCell.secondTableViewCellLabel.text, columnOneData);
+             return self.secondTableViewCell;
+     }
      
  }
 
